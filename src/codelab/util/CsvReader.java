@@ -19,7 +19,7 @@ public class CsvReader {
 
     public static void main(String[] args) {
 
-        String csvFilePath = System.getProperty("user.dir") + "/src/codelab/status/roster.csv";
+        String csvFilePath = System.getProperty("user.dir") + "\\src\\codelab\\data\\roster.csv";
         String row;
         String csvSplitBy = ",";
         BufferedReader br;
