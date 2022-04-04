@@ -1,71 +1,88 @@
 ***ANSWER ALL OF THE QUESTIONS BELOW***
 
 Why do we need data structure?
-Answer:
+Answer: We need a data structure as it provides a way to organize, manage and store data efficiently.
 
 What are the various operations that can be performed on different data structures?
-Answer:
+Answer: Sorting, Searching, Deletion, Traversal & Traversal.
 
 When would we use data structures in the real world?
-Answer:
+Answer: We would use data structures for databases & software development in the real world.
 
 What is an Array?
-Answer:
+Answer: An array is a container object that holds a fixed number of values of a single type.
 
 What is the difference between Array and ArrayList?
-Answer:
+Answer: Array is a fixed length data structure whereas ArrayList is a variable length Collection class.
 
 What is a LinkedList?
-Answer:
+Answer: Ordered collection that contains many objects of the same type.
 
 How is an Array different from LinkedList?
-Answer:
+Answer: An array is a collection of elements of a similar data type. A linked list is a collection of
+objects known as a node where node consists of two parts.
 
 What is a Queue?
-Answer:
+Answer: Queue is a collection of ordered objects.
 
 What is a Stack (referring to data structures)?
-Answer:
+Answer: A linear data structure which follows a particular order in which the operations are performed.
 
 What is FIFO and LIFO?
-Answer:
+Answer: FIFO a method for handling data structures where the first element is
+processed first and the newest element is processed last. LIFO is the opposite of FIFO, LIFO is last in first out.
 
 Explain Big O Notation?
-Answer:
+Answer: Big O Notation is a way to measure an algorithm's efficiency.
+It measures the time it takes to run your function as the input grows.
 
 What is the best case to search an element from an array?
-Answer:
+Answer: O(n) once element found then it will be O(1)
 
 What is the worst case to search an element from an array?
-Answer:
+Answer: O(n)
 
 Describe what a tree data structure is?
-Answer:
+Answer: A tree is a hierarchical data structure defined as a collection of nodes.
 
 Describe what a graph data structure is?
-Answer:
+Answer:A graph is a common data structure that consists of a finite set of nodes and a set of edges connecting them.
 
 What is the difference between the HashTable and HashMap?
-Answer:
+Answer: HashMap is non-synchronized whereas Hashtable is synchronized, which means Hashtable is thread-safe and can be
+shared between multiple threads but HashMap can not be shared between multiple threads without proper synchronization.
 
 How do HashMaps work in Java? How do they store values, and when are they useful?
-Answer:
+Answer: It provides the basic implementation of the Map interface of Java.
+It stores the data in (Key, Value) pairs, and you can access them by an index of another type.
+It is useful when we need efficient implementation of search, insert and delete operations.
 
 What is ArrayIndexOutOfBoundsException in java? When does it occur?
-Answer:
+Answer: Whenever we are trying to access any item of an array at an index which is not present in the array.
 
 What are the different ways of copying an array into another array?
-Answer:
+Answer: Using variable assignment, Create a new array of the same length and copy each element,
+Use the clone method of the array & Use System.arraycopy() method.
 
 What is DFS and BFS?
-Answer:
+Answer: BFS - Breadth First Search. DFS - Depth First Search. BFS uses Queue data structure for finding the shortest
+path. DFS uses Stack data structure.
 
 What is Recursion?
-Answer:
+Answer: The technique of making a function call itself.
 
 What are linear and non-linear data Structures?
-Answer:
-
+Answer: A linear data structure arranges the data items in an orderly manner where the elements are attached adjacently
+while a nonlinear data structure arranges data in sorted order, creating a relationship among the data elements.
 
 Outline different sorting algorithms and their time complexities:
-
+                Best        Avg         Worst
+Selection Sort	Ω(n^2)	    θ(n^2)	    O(n^2)
+Bubble Sort 	Ω(n)	    θ(n^2)	    O(n^2)
+Insertion Sort	Ω(n)	    θ(n^2)	    O(n^2)
+Heap Sort	    Ω(n log(n))	θ(n log(n))	O(n log(n))
+Quick Sort	    Ω(n log(n))	θ(n log(n))	O(n^2)
+Merge Sort	    Ω(n log(n))	θ(n log(n))	O(n log(n))
+Bucket Sort     Ω(n+k)	    θ(n+k)	    O(n^2)
+Radix Sort	    Ω(nk)	    θ(nk)	    O(nk)
+Count Sort      Ω(n+k)	    θ(n+k)	    O(n+k)
