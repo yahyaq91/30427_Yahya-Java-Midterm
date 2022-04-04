@@ -12,6 +12,19 @@ public class LowestNumber {
                 67, 5, 679, 54, 32, 65};
 
 
+        int minValue = array[0];
+
+        for (int i : array) {
+
+            if (i < minValue)
+
+                minValue = i;
+        }
+
+        System.out.println("Lowest number in array: " + minValue);
     }
 
+
 }
+
+

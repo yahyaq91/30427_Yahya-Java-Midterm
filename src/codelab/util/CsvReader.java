@@ -47,7 +47,6 @@ public class CsvReader {
             System.out.println(convertNumberOfProblemsSolved(student));
         }
     }
-
     private static String convertNumberOfProblemsSolved(Student student) {
         String name = student.getFirstName();
 
@@ -66,3 +65,4 @@ public class CsvReader {
         }
     }
 }
+
