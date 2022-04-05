@@ -6,7 +6,9 @@ import databases.SharedStepsDatabase;
 import java.io.*;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
 import static databases.SharedStepsDatabase.insertList;
@@ -50,19 +52,18 @@ public class DataReader {
 
 //        Part Two.
 
-        String fileUpload = System.getProperty("user.dir") + "\\src\\data_structures\\data\\self-driving-car\\";
+        List<Object> fileUpload = Collections.singletonList(System.getProperty("user.dir") +
+                "\\src\\data_structures\\data\\self-driving-car\\");
 
 
-        ssdb.insertString("data_reader", "file_id", fileUpload);
+        ssdb.insertList("dataReader", "dataReader", fileUpload);
 
-        String query = "SELECT * FROM data_reader";
+        String query = "SELECT * FROM dataReader";
         try {
             String dataReader = String.valueOf(ssdb.executeQueryReadAllSingleColumn(query, "data_reader"));
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        insertSring(new File(fileUpload));
-
 
 
 //        Part Three.
@@ -85,9 +86,6 @@ public class DataReader {
 
 //         Part Four.
 
-    }
-
-    private static void insertSring(File fileUpload) {
     }
 
 
