@@ -39,10 +39,10 @@ public class SortEfficiency {
 //        System.out.println("***SELECTION SORT***\nArray Length: " + numberArray.length + "\nExecution TIme: "
 //                + selectionSortExecutionTime + " milliseconds");
 //
-//         Insert sorted array into a database table, with the desired table name and column name
+//         // Insert sorted array into a database table, with the desired table name and column name
 //        ssdb.insertIntegerArray("selection_sort", "sorted_numbers", numberArray);
 //
-//         Retrieve all elements from the newly created table
+//         // Retrieve all elements from the newly created table
 //        String query = "SELECT * FROM SELECTION_SORT";
 //        List<String> sorted_numbers = ssdb.executeQueryReadAllSingleColumn(query, "sorted_numbers");
 //        printValue(sorted_numbers);
@@ -147,17 +147,17 @@ public class SortEfficiency {
 
         // region Bucket Sort
 
-        numberArray = algo.bucketSort(numberArray);
-        long bucketSortExecutionTime = algo.executionTime;
-
-        System.out.println("Total Execution Time of " + numberArray.length + " numbers in Bucket Sort took: "
-                + bucketSortExecutionTime + " milliseconds");
-
-        ssdb.insertIntegerArray("bucket_sort", "sorted_numbers", numberArray);
-
-        String query = "SELECT * FROM BUCKET_SORT";
-        List<String> sorted_numbers = ssdb.executeQueryReadAllSingleColumn(query, "sorted_numbers");
-        printValue(sorted_numbers);
+//        numberArray = algo.bucketSort(numberArray);
+//        long bucketSortExecutionTime = algo.executionTime;
+//
+//        System.out.println("Total Execution Time of " + numberArray.length + " numbers in Bucket Sort took: "
+//                + bucketSortExecutionTime + " milliseconds");
+//
+//        ssdb.insertIntegerArray("bucket_sort", "sorted_numbers", numberArray);
+//
+//        String query = "SELECT * FROM BUCKET_SORT";
+//        List<String> sorted_numbers = ssdb.executeQueryReadAllSingleColumn(query, "sorted_numbers");
+//        printValue(sorted_numbers);
 
 
         // endregion

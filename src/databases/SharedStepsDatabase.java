@@ -175,8 +175,7 @@ public class SharedStepsDatabase {
 
     /**
      * Inserts a String to a database table
-     *
-     * @param tableName Name of the table
+     *  @param tableName Name of the table
      * @param columnName Name of the column
      * @param string The String to be inserted
      */

@@ -18,6 +18,12 @@ public class CollectionView {
         map.put(5, "San Jose");
         map.put(6, "Seattle");
 
+        System.out.println(map);
+        System.out.println(map.get(1));
+        System.out.println(map.containsValue("NYC"));
+        System.out.println(map.containsKey(7));
+
+        System.out.println("Collection view is: " + map.values());
     }
 
 }
