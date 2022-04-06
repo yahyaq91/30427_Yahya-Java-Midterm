@@ -8,6 +8,17 @@ public class Employee {
     private String department;
 
     public Employee() {
+        Employee David = new Employee();
+        David.setEmpName("David Lenard");
+        David.setEmpEmail("Dave@gmail.com");
+        David.setDepartment("Engineering");
+        David.setSalary("140k");
+
+        Employee Rivera = new Employee();
+        Rivera.setEmpName("Rivera Dupp");
+        Rivera.setEmpEmail("rivera@gmail.com");
+        Rivera.setDepartment("Finance");
+        Rivera.setSalary("150k");
     }
 
     public Employee(String empEmail, String empName, String salary, String department) {

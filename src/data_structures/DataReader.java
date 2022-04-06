@@ -42,7 +42,7 @@ public class DataReader {
             BufferedReader reader = new BufferedReader(new FileReader(textFilePath));
             String line;
 
-            while((line = reader.readLine()) != null)
+            while ((line = reader.readLine()) != null)
                 System.out.println(line);
             reader.close();
         } catch (IOException e) {
@@ -52,21 +52,39 @@ public class DataReader {
 
 //        Part Two.
 
+        String tableName = "dataReader";
+        String coloumnName = "dataRader";
         List<Object> fileUpload = Collections.singletonList(System.getProperty("user.dir") +
                 "\\src\\data_structures\\data\\self-driving-car\\");
 
 
-        ssdb.insertList("dataReader", "dataReader", fileUpload);
+        ssdb.insertList(tableName, coloumnName, fileUpload);
 
         String query = "SELECT * FROM dataReader";
+        String dataReader = null;
         try {
-            String dataReader = String.valueOf(ssdb.executeQueryReadAllSingleColumn(query, "data_reader"));
+            dataReader = String.valueOf(ssdb.executeQueryReadAllSingleColumn(query, "data_reader"));
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        System.out.println(dataReader);
 
 
 //        Part Three.
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(textFilePath));
+            String line;
+            while ((line = reader.readLine()) != null)
+                fileContents += line;
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        wordList.add((fileContents));
+        System.out.println(wordList);
+
 
         File file = new File(textFilePath);
         Scanner scan = null;
@@ -76,11 +94,10 @@ public class DataReader {
             e.printStackTrace();
         }
         wordList = new LinkedList<>();
-        String fileContent = "";
-        while(scan.hasNextLine()) {
-            fileContent = fileContent.concat(scan.nextLine() + "\n");
+        while (scan.hasNextLine()) {
+            fileContents = fileContents.concat(scan.nextLine() + "\n");
         }
-        wordList.add(fileContent);
+        wordList.add(fileContents);
         System.out.print(wordList);
 
 

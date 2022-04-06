@@ -111,9 +111,9 @@ public class SharedStepsDatabase {
      * @param columnName Identifies the column to read data_structures.data from
      * @return All cell values within the specified column, resulting from the query's execution
      */
-    public List<String> executeQueryReadAllSingleColumn(String query, String columnName) throws SQLException {
+    public List<Object> executeQueryReadAllSingleColumn(String query, String columnName) throws SQLException {
         resultSet = executeQuery(query);
-        List<String> dataList = new ArrayList<>();
+        List<Object> dataList = new ArrayList<>();
         String item;
 
         while (resultSet.next()) {
