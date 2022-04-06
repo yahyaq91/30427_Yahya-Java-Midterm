@@ -37,7 +37,7 @@ public class UseMap {
 
         // IMPLEMENT HERE
 
-        sql.insertMap("test_hash_map", map);
+        sql.insertMap(tableName, map);
 
         String query = "SELECT * FROM test_hash_map";
         String value = null;

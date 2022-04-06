@@ -63,7 +63,7 @@ public class DataReader {
         String query = "SELECT * FROM dataReader";
         String dataReader = null;
         try {
-            dataReader = String.valueOf(ssdb.executeQueryReadAllSingleColumn(query, "data_reader"));
+            dataReader = String.valueOf(ssdb.executeQueryReadAll(query));
         } catch (SQLException e) {
             e.printStackTrace();
         }
