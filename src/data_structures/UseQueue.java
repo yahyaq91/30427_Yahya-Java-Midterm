@@ -3,10 +3,7 @@ package data_structures;
 import databases.SharedStepsDatabase;
 
 import java.sql.SQLException;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class UseQueue {
 
@@ -18,7 +15,7 @@ public class UseQueue {
          * Store and retrieve data_structures.data from/to a database table.
          */
 
-        List<Object> restaurantLine = new LinkedList<>();
+        Queue<String> restaurantLine = new LinkedList<>();
 
         restaurantLine.add("John");
         restaurantLine.add("Hannah");
@@ -28,13 +25,13 @@ public class UseQueue {
 
         System.out.println("Initial Queue: " + restaurantLine);
 
-        ((LinkedList<Object>) restaurantLine).peek();
-        System.out.println("Peeking at: " + ((LinkedList<Object>) restaurantLine).peek());
+        restaurantLine.peek();
+        System.out.println("Peeking at: " + restaurantLine.peek());
 
         restaurantLine.remove("Adam");
         System.out.println("After removal: " + restaurantLine);
 
-        ((LinkedList<Object>) restaurantLine).poll();
+        restaurantLine.poll();
         System.out.println("Final Queue after Poll: " + restaurantLine);
 
         Queue<String> letters = new LinkedList<>();
@@ -59,7 +56,7 @@ public class UseQueue {
 
         // IMPLEMENT HERE
 
-        sql.insertList(tableName, coloumnName, restaurantLine);
+        sql.insertList(tableName, coloumnName, Collections.singletonList(restaurantLine));
 
         String query = "SELECT * FROM Restaurant_Line";
 
