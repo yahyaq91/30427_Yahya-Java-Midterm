@@ -53,20 +53,18 @@ public class DataReader {
 //        Part Two.
 
         String tableName = "dataReader";
-        String coloumnName = "dataRader";
+        String columnName = "dataReader";
         List<Object> fileUpload = Collections.singletonList(System.getProperty("user.dir") +
                 "\\src\\data_structures\\data\\self-driving-car\\");
 
 
-        ssdb.insertList(tableName, coloumnName, fileUpload);
+        ssdb.insertList(tableName, columnName, fileUpload);
 
         String query = "SELECT * FROM dataReader";
         String dataReader = null;
-        try {
-            dataReader = String.valueOf(ssdb.executeQueryReadAll(query));
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
+        dataReader = String.valueOf(ssdb.executeQueryReadAll(query));
+
         System.out.println(dataReader);
 
 

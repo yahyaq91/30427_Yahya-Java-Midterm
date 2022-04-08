@@ -7,7 +7,7 @@ import java.util.*;
 
 public class UseQueue {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         /*
          * Demonstrate how to use Queue that includes add, peek, remove & poll elements.
          * Use For-Each loop and While-Loop with Iterator to retrieve data_structures.data.
@@ -51,21 +51,17 @@ public class UseQueue {
         }
 
         String tableName = "Restaurant_Line";
-        String coloumnName = "name";
+        String columnName = "name";
         SharedStepsDatabase sql = new SharedStepsDatabase();
 
         // IMPLEMENT HERE
 
-        sql.insertList(tableName, coloumnName, Collections.singletonList(restaurantLine));
+        sql.insertList(tableName, columnName, Collections.singletonList(restaurantLine));
 
         String query = "SELECT * FROM Restaurant_Line";
 
-        try {
-            coloumnName = String.valueOf(sql.executeQueryReadAll(query));
-        } catch (
-                SQLException e) {
-            e.printStackTrace();
-        }
-        System.out.println(coloumnName);
+        columnName = String.valueOf(sql.executeQueryReadAll(query));
+
+        System.out.println(columnName);
     }
 }

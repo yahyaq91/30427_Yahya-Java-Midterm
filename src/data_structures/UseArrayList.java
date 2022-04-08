@@ -4,6 +4,7 @@ import databases.SharedStepsDatabase;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -33,17 +34,15 @@ public class UseArrayList {
 
 
         String tableName = "Cars";
-        String coloumnName = "car_make";
+        String columnName = "car_make";
 
-        ssdb.insertList( tableName, coloumnName, carList);
+        ssdb.insertList( tableName, columnName, carList);
 
         String query = "SELECT * FROM Cars";
-        try {
-            carList = ssdb.executeQueryReadAllSingleColumn(query, " ");
-        } catch (SQLException e) {
-            e.printStackTrace();
+        carList = Collections.singletonList(ssdb.executeQueryReadAllSingleColumn(query, columnName));
 
-        }  System.out.println(carList);
+
+         System.out.println(carList);
 
     }
 

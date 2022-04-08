@@ -41,11 +41,8 @@ public class UseMap {
 
         String query = "SELECT * FROM test_hash_map";
         String value = null;
-        try {
-            value = String.valueOf(sql.executeQueryReadAllSingleColumn(query, "value"));
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        value = String.valueOf(sql.executeQueryReadAllSingleColumn(query, "value"));
+
         System.out.println(value);
     }
 
