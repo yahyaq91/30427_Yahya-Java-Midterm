@@ -4,11 +4,10 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import databases.SharedStepsDatabase;
 import org.json.JSONException;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
@@ -16,18 +15,19 @@ import java.util.List;
 
 public class CnnAPI {
     /** INSTRUCTIONS
-     * Go to this URL: https://newsapi.org/s/cnn-api
+     * Go to this URL: https://newsapi.org/s/cnn-api (DONE)
      *
      * Get your API Key from this website. Once you have your key, you can append your key to the end of the URL, as
-     * shown below.
+     * shown below. (DONE)
      *
      *  https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=YOUR_API_KEY
+     *  https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=872639d33d134c278f84e6d9e5cf9408
      *
      * When you navigate to that full URL, you will be submitting a request, and the response should be CNN's
-     * top headline news.
+     * top headline news. (DONE)
      *
      * After retrieving the JSON response, you can go to the following link to validate that it is, in fact, valid JSON:
-     *  https://jsonlint.com/
+     *  https://jsonlint.com/ (DONE)
      *
      *      "articles": [{
      * 		"source": {
@@ -58,14 +58,15 @@ public class CnnAPI {
      */
 
     public static void main(String[] args) throws IOException, JSONException {
-        String apiKey = "";
-        String URL = "";
+        String apiKey = "872639d33d134c278f84e6d9e5cf9408";
+        String URL = "https://newsapi.org/v2/top-headlines?sources=cnn&apiKey=872639d33d134c278f84e6d9e5cf9408";
 
         NewsData news = null;
         List<NewsData> newsDataList = new ArrayList<>();
         java.net.URL url1 = new URL(URL);
-        URLConnection request = url1.openConnection();//establish the connection with  the server
+        URLConnection request = url1.openConnection();
         request.connect();
+
 
         JsonArray jsonArray = null;
         JsonObject rootObj = null;
@@ -79,7 +80,6 @@ public class CnnAPI {
             jsonArray = root.getAsJsonArray();
         }
 
-        // If response is not a JSON array, then convert the response into a JSON array
         if (jsonArray == null)
             jsonArray = rootObj.getAsJsonArray("articles");
 
@@ -97,15 +97,28 @@ public class CnnAPI {
             try {
                 JsonObject jsonobject = jsonArray.get(i).getAsJsonObject();
 
+                source = jsonobject.get("source").toString();
+                author = jsonobject.get("author").toString();
                 title = jsonobject.get("title").toString();
-                System.out.println("TITLE: " + title);
+                description = jsonobject.get("description").toString();
+                url = jsonobject.get("url").toString();
+                urlToImage = jsonobject.get("urlToImage").toString();
+                publishedAt = jsonobject.get("publishedAt").toString();
+                content = jsonobject.get("content").toString();
 
-                // Implement the remaining code, using the provided example within this try block
+                System.out.printf("SOURCE: %s\nAUTHOR: %s\nTITLE: %s\nDESCRIPTION: %s\nURL: %s\nURL TO IMAGE: %s\n" +
+                                "PUBLISHED AT: %s\nCONTENT: %s\n\n", source, author, title, description, url, urlToImage,
+                        publishedAt, content);
+
+                NewsData news2 = new NewsData(source, author, title, description, url, urlToImage, publishedAt, content);
+                newsDataList.add(news2);
+
 
             } catch (Exception ex) {
 
             }
         }
+
     }
 
     // Inner Class
@@ -119,4 +132,3 @@ public class CnnAPI {
     }
 
 }
-
