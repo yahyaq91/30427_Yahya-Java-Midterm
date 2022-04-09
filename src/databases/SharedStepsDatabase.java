@@ -253,6 +253,52 @@ public class SharedStepsDatabase {
         }
     }
 
+    public void insertQueue(String tableName, Queue<String> queue) {
+        try {
+            ps = connect.prepareStatement("DROP TABLE IF EXISTS " + tableName + ";");
+            ps.executeUpdate();
+            ps = connect.prepareStatement("CREATE TABLE " + tableName + " (`key` VARCHAR(45) DEFAULT 1 NOT NULL, `value` VARCHAR(45) NULL);");
+            ps.executeUpdate();
+
+            StringBuilder sql = new StringBuilder("INSERT INTO ").append(tableName).append(" (`key`, `value`)").append(" VALUES (");
+
+            for (Object key : queue){
+                sql.append("'").append(key).append("', '").append(queue.contains(key)).append("'), (");
+            }
+            String sqlString = sql.toString();
+            sqlString = sqlString.substring(0, sqlString.length() - 3);;
+
+            ps = connect.prepareStatement(sqlString);
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void insertArrayList(String tableName, List<Object> list) {
+        try {
+            ps = connect.prepareStatement("DROP TABLE IF EXISTS " + tableName + ";");
+            ps.executeUpdate();
+            ps = connect.prepareStatement("CREATE TABLE " + tableName + " (`key` VARCHAR(45) DEFAULT 1 NOT NULL, `value` VARCHAR(45) NULL);");
+            ps.executeUpdate();
+
+            StringBuilder sql = new StringBuilder("INSERT INTO ").append(tableName).append(" (`key`, `value`)").append(" VALUES (");
+
+            for (Object key : list) {
+                sql.append("'").append(key).append("', '").append(list.contains(key)).append("'), (");
+            }
+            String sqlString = sql.toString();
+            sqlString = sqlString.substring(0, sqlString.length() - 3);;
+
+            ps = connect.prepareStatement(sqlString);
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      * Closes all static resources
      */

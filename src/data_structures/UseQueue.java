@@ -58,7 +58,7 @@ public class UseQueue {
 
         // IMPLEMENT HERE
 
-        sql.insertList(tableName, columnName, Collections.singletonList(restaurantLine));
+        sql.insertQueue(tableName, restaurantLine);
 
         String query = "SELECT * FROM Restaurant_Line";
 

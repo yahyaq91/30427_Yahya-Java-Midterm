@@ -163,17 +163,17 @@ public class SortEfficiency {
 
 
         // region 8 - Shell Sort
-        numberArray = algo.shellSort(numberArray);
-        long shellSortExecutionTime = algo.executionTime;
-
-        System.out.println("***SHELL SORT***\nArray Length: " + numberArray.length + "\nExecution TIme: "
-                + shellSortExecutionTime + " milliseconds");
-
-        ssdb.insertIntegerArray("shell_sort", "sorted_numbers", numberArray);
-
-        String query = "SELECT * FROM SHELL_SORT";
-        List<String> sorted_numbers = ssdb.executeQueryReadAllSingleColumn(query, "sorted_numbers");
-        printValue(sorted_numbers);
+//        numberArray = algo.shellSort(numberArray);
+//        long shellSortExecutionTime = algo.executionTime;
+//
+//        System.out.println("***SHELL SORT***\nArray Length: " + numberArray.length + "\nExecution TIme: "
+//                + shellSortExecutionTime + " milliseconds");
+//
+//        ssdb.insertIntegerArray("shell_sort", "sorted_numbers", numberArray);
+//
+//        String query = "SELECT * FROM SHELL_SORT";
+//        List<String> sorted_numbers = ssdb.executeQueryReadAllSingleColumn(query, "sorted_numbers");
+//        printValue(sorted_numbers);
 
         // endregion
 

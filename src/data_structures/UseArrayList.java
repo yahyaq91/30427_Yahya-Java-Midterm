@@ -38,11 +38,10 @@ public class UseArrayList {
         String tableName = "Cars";
         String columnName = "car_make";
 
-        ssdb.insertList( tableName, columnName, carList);
+        ssdb.insertArrayList(tableName, carList);
 
         String query = "SELECT * FROM Cars";
-        carList = Collections.singletonList(ssdb.executeQueryReadAllSingleColumn(query, columnName));
-
+        carList = Collections.singletonList(ssdb.executeQueryReadAll(query));
 
          System.out.println(carList);
 
