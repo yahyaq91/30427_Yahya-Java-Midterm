@@ -46,7 +46,7 @@ public class JsonReaderUtil {
         URLConnection request = url.openConnection();
         request.connect();
 
-        Employee emp = null;
+
         String empName;
         String empEmail;
         String empDept;
@@ -71,21 +71,25 @@ public class JsonReaderUtil {
                     // Your code implementation starts here
                     empName = jsonobject.get("empName").toString();
                     empEmail = jsonobject.get("empEmail").toString();
-                    empDept = jsonobject.get("empDept").toString();
-                    empSalary = jsonobject.get("empSalary").toString();
+                    empDept = jsonobject.get("department").toString();
+                    empSalary = jsonobject.get("salary").toString();
 
-                    System.out.println("NAME: " + empName + "\n" + "EMAIL: " + empEmail + "\n" + "Department" + empDept
-                            + "\n" + "Salary" + empSalary);
+
+                    Employee emp2 = new Employee(empName, empEmail, empDept, empSalary);
+                    empList.add(emp2);
+
 
                 } catch (NullPointerException np) {
                     System.out.println("NO EMAIL EXISTS FOR STUDENT AT INDEX " + i);
                 }
             }
+            System.out.println();
         }
 
         for (Employee entry : empList) {
-            System.out.println(entry.getEmpName() + entry.getEmpEmail() + entry.getDepartment() + entry.getSalary());
+
+            System.out.printf("NAME: %s\nEMAIL: %s\nDEPT: %s\nSALARY: %s\n\n", entry.getEmpName(),
+                    entry.getEmpEmail(), entry.getDepartment(), entry.getSalary());
         }
     }
-
 }

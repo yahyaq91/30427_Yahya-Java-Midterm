@@ -27,6 +27,8 @@ public class UseArrayList {
         carList.add("Audi");
         carList.add("BMW");
         carList.add("Mercedes");
+        carList.add("Tesla");
+        carList.add("Bugatti");
         System.out.println("Initial ArrayList: " + carList);
 
         carList.remove("BMW");

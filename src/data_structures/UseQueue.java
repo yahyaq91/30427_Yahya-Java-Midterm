@@ -17,18 +17,20 @@ public class UseQueue {
 
         Queue<String> restaurantLine = new LinkedList<>();
 
-        restaurantLine.add("John");
-        restaurantLine.add("Hannah");
-        restaurantLine.add("Adam");
-        restaurantLine.add("Aaron");
-        restaurantLine.add("Jay");
+        restaurantLine.add("Romario");
+        restaurantLine.add("Zidan");
+        restaurantLine.add("Ronaldo");
+        restaurantLine.add("Kaka");
+        restaurantLine.add("Cristiano");
+        restaurantLine.add("Haaland");
+        restaurantLine.add("Bruce");
 
         System.out.println("Initial Queue: " + restaurantLine);
 
         restaurantLine.peek();
         System.out.println("Peeking at: " + restaurantLine.peek());
 
-        restaurantLine.remove("Adam");
+        restaurantLine.remove("Romario");
         System.out.println("After removal: " + restaurantLine);
 
         restaurantLine.poll();
@@ -36,9 +38,9 @@ public class UseQueue {
 
         Queue<String> letters = new LinkedList<>();
 
-        letters.add("A");
-        letters.add("B");
-        letters.add("C");
+        letters.add("V");
+        letters.add("I");
+        letters.add("P");
 
         Iterator iterator = letters.iterator();
 
@@ -51,7 +53,7 @@ public class UseQueue {
         }
 
         String tableName = "Restaurant_Line";
-        String columnName = "name";
+        String columnName = "Guest_Names";
         SharedStepsDatabase sql = new SharedStepsDatabase();
 
         // IMPLEMENT HERE
