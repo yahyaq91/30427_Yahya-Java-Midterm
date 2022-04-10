@@ -25,7 +25,6 @@ import org.xml.sax.SAXException;
 public class XmlReader {
 
     public List<Student> parseData(String tagName, String path) throws ParserConfigurationException, SAXException, IOException {
-
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         File file = new File(path);
@@ -40,7 +39,6 @@ public class XmlReader {
         NodeList childNodes;
         String content;
         String data;
-
         for (int i = 0; i < nodeList.getLength(); i++) {
             node = nodeList.item(i);
             if (node instanceof Element) {
@@ -75,8 +73,25 @@ public class XmlReader {
     // You must implement this method
     public char convertIntToChar(String score) {
         char grade = ' ';
+        int setScore = (Integer.parseInt(score));
 
-        return grade;
+        if ((setScore >= 90) && (setScore) <= 100) {
+
+            return 'A';
+
+        } else if ((setScore >= 80) && (setScore) <= 89) {
+
+            return 'B';
+
+        } else if ((setScore >= 70) && (setScore) <= 79) {
+
+            return 'C';
+
+        } else if ((setScore >= 60) && (setScore) <= 69) {
+            return 'D';
+        } else {
+            return 'F';
+        }
+
     }
-
 }

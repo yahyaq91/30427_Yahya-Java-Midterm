@@ -60,14 +60,43 @@ public class ProcessStudentInfo {
         String seleniumDocPath;
         String qtpDocPath;
         String tag = "id";
-
+        //  printStudentInfo();
+    }
         /*
          Here is a map that you'll be using to store 2 lists. One will contain Selenium students, the other will
          contain QTP students
          */
-        Map<String, List<Student>> studentMap = new LinkedHashMap<String, List<Student>>();
 
-        // Implement the rest below, as per the instructions
+
+    public static void printStudentInfo() throws ParserConfigurationException, IOException, SAXException {
+        Map<String, List<Student>> studentMap = new LinkedHashMap<String, List<Student>>();
+        XmlReader xml = new XmlReader();
+        ArrayList<Student> list = new ArrayList<Student>();
+
+        System.out.println("Selenium students :");
+        list = (ArrayList<Student>) xml.parseData("id", "\\C:\\Users\\yahya\\IdeaProjects\\Java_Midterm\\src\\xml" +
+                "\\data\\selenium.xml");
+        studentIretration(list);
+
+        System.out.println("qtp students");
+        list = (ArrayList<Student>) xml.parseData("id", "\\C:\\Users\\yahya\\IdeaProjects\\Java_Midterm\\src\\xml" +
+                "\\data\\qtp.xml");
+        studentIretration(list);
 
     }
+    public static void studentIretration(ArrayList<Student> list) throws ParserConfigurationException, IOException, SAXException {
+        int i = 0;
+        while (i < list.size()) {
+            System.out.println("Student ID: " + list.get(i).getId());
+            System.out.println("First Name: " + list.get(i).getFirstName());
+            System.out.println("Last Name:  " + list.get(i).getLastName());
+            System.out.println("Grade:  " + list.get(i).getScore());
+            System.out.println();
+            i++;
+        }
+
+
+    }
+
+
 }
