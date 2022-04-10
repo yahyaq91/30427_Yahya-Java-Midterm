@@ -109,17 +109,17 @@ public class SortEfficiency {
 
 
         // region - Quick Sort
-        numberArray = algo.quickSort(numberArray);
-        long quickSortExecutionTime = algo.executionTime;
-
-        System.out.println("***QUICK SORT***\nArray Length: " + numberArray.length + "\nExecution TIme: "
-                + quickSortExecutionTime + " milliseconds");
-
-        ssdb.insertIntegerArray("quick_sort", "sorted_numbers", numberArray);
-
-        String query = "SELECT * FROM QUICK_SORT";
-        List<String> sorted_numbers = ssdb.executeQueryReadAllSingleColumn(query, "sorted_numbers");
-        printValue(sorted_numbers);
+//        numberArray = algo.quickSort(numberArray);
+//        long quickSortExecutionTime = algo.executionTime;
+//
+//        System.out.println("***QUICK SORT***\nArray Length: " + numberArray.length + "\nExecution TIme: "
+//                + quickSortExecutionTime + " milliseconds");
+//
+//        ssdb.insertIntegerArray("quick_sort", "sorted_numbers", numberArray);
+//
+//        String query = "SELECT * FROM QUICK_SORT";
+//        List<String> sorted_numbers = ssdb.executeQueryReadAllSingleColumn(query, "sorted_numbers");
+//        printValue(sorted_numbers);
 
         // endregion
 
@@ -145,17 +145,17 @@ public class SortEfficiency {
 
 
         // region - Bucket Sort
-//        numberArray = algo.bucketSort(numberArray);
-//        long bucketSortExecutionTime = algo.executionTime;
-//
-//        System.out.println("***BUCKET SORT***\nArray Length: " + numberArray.length + "\nExecution TIme: "
-//                + bucketSortExecutionTime + " milliseconds");
-//
-//        ssdb.insertIntegerArray("bucket_sort", "sorted_numbers", numberArray);
-//
-//        String query = "SELECT * FROM BUCKET_SORT";
-//        List<String> sorted_numbers = ssdb.executeQueryReadAllSingleColumn(query, "sorted_numbers");
-//        printValue(sorted_numbers);
+        numberArray = algo.bucketSort(numberArray);
+        long bucketSortExecutionTime = algo.executionTime;
+
+        System.out.println("***BUCKET SORT***\nArray Length: " + numberArray.length + "\nExecution TIme: "
+                + bucketSortExecutionTime + " milliseconds");
+
+        ssdb.insertIntegerArray("bucket_sort", "sorted_numbers", numberArray);
+
+        String query = "SELECT * FROM BUCKET_SORT";
+        List<String> sorted_numbers = ssdb.executeQueryReadAllSingleColumn(query, "sorted_numbers");
+        printValue(sorted_numbers);
 
         // endregion
 
